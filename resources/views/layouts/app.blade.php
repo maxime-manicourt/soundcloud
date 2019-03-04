@@ -38,7 +38,11 @@
 <div id="main">
     @yield('content')
 </div>
+<div class="player">
+    <audio id="audio" controls></audio>
+</div>
 <!-- Scripts -->
 <script src="{{ asset('js/jquery.js') }}"></script>
+<script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
