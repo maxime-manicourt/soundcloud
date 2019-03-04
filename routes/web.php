@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'MonControleur@index');
-
+Route::get('/utilisateur/{id}', 'MonControleur@utilisateur')->where('id', '[0-9]+')->name('utilisateur');
 
 Auth::routes();
 
