@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Chanson;
 use App\User;
 
@@ -23,4 +24,16 @@ class MonControleur extends Controller
 
         return view('utilisateur', ['utilisateur' => $utilisateur]);
     }
+
+    public function suivi($id) {
+        $utilisateur = User::find($id);
+
+        if($utilisateur==false){
+            abort('403');
+        }
+    
+        Auth::user()->jeLesSuis()->toggle($id);
+        return back();
+    }
+
 }
