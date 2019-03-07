@@ -1,0 +1,11 @@
+@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css?family=Kanit:400,500,900|Open+Sans" rel="stylesheet);h1,
+h2,
+h3 {
+  font-family: "Kanit", sans-serif;
+}
+
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
