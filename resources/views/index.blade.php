@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="last-tracks">
-        <h2>Les derniers titres</h2>
+        <h2>KKK Les derniers titres</h2>
     </div>
     <ul>
         @foreach($chansons as $c)
