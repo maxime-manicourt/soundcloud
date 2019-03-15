@@ -10,7 +10,6 @@ use App\User;
 class MonControleur extends Controller
 {
     public function index() {
-        
 
         return view("index", ['chansons' => Chanson::all()]);
     }
@@ -34,6 +33,28 @@ class MonControleur extends Controller
     
         Auth::user()->jeLesSuis()->toggle($id);
         return back();
+    }
+
+    public function nouvelle(){
+        return view('nouvelle');
+    }
+
+    public function creer(Request $request){
+       
+        if($request->hasFile('chanson') && $request->file('chanson') -> isValid()){
+            $c = new Chanson();
+            $c -> nom = $request->input('nom');
+            $c -> style = $request->input('style');
+            $c -> utilisateur_id = Auth::id();
+
+            $c -> fichier = $request -> file('chanson') -> store("/public/chansons/".Auth::id());
+            $c -> fichier = str_replace("/public/", "/storage/", $c -> fichier);
+
+            $c -> save();
+
+        }
+
+        return redirect("/");
     }
 
 }

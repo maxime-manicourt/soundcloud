@@ -36,6 +36,10 @@
     </ul>
 </nav>
 
+@auth
+    <a href="/nouvelle">Inserer une chanson</a><br>
+@endauth
+
 <audio id="audio" controls src="/audio/One.mp3"></audio><br />
 
 <div id="main">
