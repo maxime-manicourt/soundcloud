@@ -1,0 +1,40 @@
+.link__rounded{
+    padding: 0.5em;
+    border-radius: $rounded-radius;
+    margin: 0 0.5em;
+    transition: all 0.12s ease-in-out;
+    @include on-event{
+        text-decoration: none;
+    }
+}
+
+.link__auth{
+    color: $pink-jackx;
+    background: white;
+    border: 2px solid $pink-jackx;
+
+    @include on-event{
+        background: $pink-jackx;
+        color: white;
+    }
+}
+
+.link__upload-s{
+    color: white;
+    background: $pink-jackx;
+    position: relative;
+    padding-left: 2em;
+
+    @include on-event{
+        background: $purple-jackx;
+        color: white
+    }
+}
+
+.link__icon{
+    height: 60%;
+    width: auto;
+    position: absolute;
+    top: 0.4em;
+    left: 1em;
+}

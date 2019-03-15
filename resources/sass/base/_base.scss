@@ -24,6 +24,10 @@ html {
   box-sizing: inherit;
 }
 
+body{
+  background-color: #f4f4f4;
+}
+
 /**
  * Basic styles for links
  */
@@ -41,4 +45,16 @@ h1, h2, h3 {
     font-family: $font-title;
     letter-spacing: $letter-spacing-title;
     text-transform: uppercase;
+    margin: 0;
   }
+
+.container{
+  max-width: 90vw;
+  margin: 0 auto;
+}
+
+#main{
+  background: white;
+  width: 100%;
+  min-height: 50vh;
+}

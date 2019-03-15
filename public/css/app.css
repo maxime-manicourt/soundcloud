@@ -478,6 +478,10 @@ html {
   box-sizing: inherit;
 }
 
+body {
+  background-color: #f4f4f4;
+}
+
 /**
  * Basic styles for links
  */
@@ -500,10 +504,147 @@ h3 {
   font-family: "Kanit", sans-serif;
   letter-spacing: 0.05em;
   text-transform: uppercase;
+  margin: 0;
+}
+
+.container {
+  max-width: 90vw;
+  margin: 0 auto;
+}
+
+#main {
+  background: white;
+  width: 100%;
+  min-height: 50vh;
 }
 
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.main__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.main__nav .nav__logo {
+  width: 150px;
+  height: auto;
+  margin: 0 1em 0 1em;
+}
+
+.main__nav .nav__logo img {
+  width: 100%;
+  height: auto;
+}
+
+.main__nav .nav__profile {
+  margin-right: 1em;
+}
+
+.main__nav .nav__profile .nav__profile__avatar {
+  display: flex;
+  position: relative;
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  background: linear-gradient(#e66465, #9198e5);
+}
+
+.main__nav .nav__profile .nav__profile__avatar img {
+  position: absolute;
+  top: 20%;
+  left: 25%;
+  height: 50%;
+  width: auto;
+}
+
+.main__nav .nav__profile .nav__profile__list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.main__nav .nav__profile .nav__profile__list .nav__profile__items {
+  margin: 0 1em;
+}
+
+.user__name {
+  font-weight: bold;
+}
+
+.avatar-flex {
+  display: flex;
+  align-items: center;
+}
+
+.avatar-flex div {
+  margin-left: 1em;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown:before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  background: #ff3366;
+  top: 0.5em;
+  right: 0.1em;
+  height: 2em;
+}
+
+.link__rounded {
+  padding: 0.5em;
+  border-radius: 5em;
+  margin: 0 0.5em;
+  transition: all 0.12s ease-in-out;
+}
+
+.link__rounded:hover,
+.link__rounded:active,
+.link__rounded:focus {
+  text-decoration: none;
+}
+
+.link__auth {
+  color: #ff3366;
+  background: white;
+  border: 2px solid #ff3366;
+}
+
+.link__auth:hover,
+.link__auth:active,
+.link__auth:focus {
+  background: #ff3366;
+  color: white;
+}
+
+.link__upload-s {
+  color: white;
+  background: #ff3366;
+  position: relative;
+  padding-left: 2em;
+}
+
+.link__upload-s:hover,
+.link__upload-s:active,
+.link__upload-s:focus {
+  background: #452393;
+  color: white;
+}
+
+.link__icon {
+  height: 60%;
+  width: auto;
+  position: absolute;
+  top: 0.4em;
+  left: 1em;
 }
 

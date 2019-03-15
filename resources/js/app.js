@@ -33,9 +33,9 @@ const app = new Vue({
 });
 
 $(document).ready (function(){
-    $('#app').on('click', 'a.track', function(e) {
+    $('#main').on('click', 'a.track', function(e) {
         e.preventDefault();
-        var f = ($this).attr('data-file');
+        var f = $(this).attr('data-file');
         console.log(f);
 
         var audio = $('#audio');
