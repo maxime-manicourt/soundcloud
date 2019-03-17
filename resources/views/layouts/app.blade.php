@@ -35,6 +35,18 @@
         @endguest
     </ul>
 </nav>
+
+@auth
+    <a href="/nouvelle">Inserer une chanson</a><br>
+@endauth
+
+<audio id="audio" controls src="/audio/One.mp3"></audio><br />
+
+<form id="search">
+    <input type="search" name="search" required placeholder="Recherche"/>
+    <input type="submit" value="Rechercher"/>
+</form>
+
 <div id="main">
     @yield('content')
 </div>
