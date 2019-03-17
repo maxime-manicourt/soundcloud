@@ -478,6 +478,12 @@ html {
   box-sizing: inherit;
 }
 
+/*
+*{
+  background: rgba(0,0,155,0.2)
+}
+*/
+
 body {
   background-color: #f4f4f4;
 }
@@ -516,11 +522,6 @@ h3 {
   background: white;
   width: 100%;
   min-height: 50vh;
-}
-
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
 .main__nav {
@@ -590,7 +591,7 @@ h3 {
   position: relative;
 }
 
-.dropdown:before {
+.dropdown:after {
   content: "";
   position: absolute;
   width: 2px;
@@ -629,15 +630,32 @@ h3 {
 .link__upload-s {
   color: white;
   background: #ff3366;
+  border: 2px solid #ff3366;
   position: relative;
-  padding-left: 2em;
 }
 
 .link__upload-s:hover,
 .link__upload-s:active,
 .link__upload-s:focus {
   background: #452393;
+  border: 2px solid #452393;
   color: white;
+}
+
+.link__upload-s li {
+  display: flex;
+}
+
+.link__upload-s li::before {
+  background-image: url("/img/icon-upload.png");
+  background-size: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+  content: "";
+  margin-right: 0.5em;
 }
 
 .link__icon {
@@ -646,5 +664,41 @@ h3 {
   position: absolute;
   top: 0.4em;
   left: 1em;
+}
+
+#dropdown {
+  position: relative;
+}
+
+#dropdown:hover {
+  cursor: pointer;
+}
+
+#dropdown li {
+  margin-right: 20px;
+}
+
+#dropdown li i {
+  margin-left: 0.5em;
+}
+
+.dropdown__list {
+  display: none;
+  background-color: #ff3366;
+  list-style: none;
+  border-radius: 10px;
+  padding: 15px 10px 15px 0;
+  color: white;
+  position: absolute;
+  text-align: right;
+  min-width: 130%;
+}
+
+.dropdown__list__shown {
+  display: block !important;
+}
+
+.dropdown__list:hover {
+  cursor: initial;
 }
 

@@ -9,6 +9,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <header>
@@ -24,25 +25,53 @@
                     <a href="{{ route('login') }}" class="link__rounded link__auth"><li class="nav__profile__items">Login</li></a>
                     <a href="{{ route('register') }}" class="link__rounded link__auth"><li class="nav__profile__items">Register</li></a>
                 @else
-                    <div class="dropdown">
-                        <li class="nav__profile__items avatar-flex"><span class="user__name">{{ Auth::user()->name }}</span>
-                        <div class="nav__profile__avatar">
-                            <img src="{{ URL::asset('/img/icon-user.png') }}" alt="logo"/>
-                        </div>
+                    <div id="dropdown">
+                        <li class="nav__profile__item avatar-flex"><span class="user__name">{{ Auth::user()->name }}</span>
+                            <div class="nav__profile__avatar">
+                                <img src="{{ URL::asset('/img/icon-user.png') }}" alt="logo"/>
+                            </div>
+                            <i class="fa fa-caret-down"></i>
                         </li>
+                        <ul class="dropdown__list">
+                                <a href="">
+                                    <li class="dropdown__list__item">Voir son profil</li>
+                                </a>
+                                <a href="">
+                                    <li class="dropdown__list__item">Editer son profil</li>
+                                </a>
+                                <a href="">
+                                    <li class="dropdown__list__item">Mes tracks</li>
+                                </a>
+                                <a href="">
+                                    <li class="dropdown__list__item">Mes playlists</li>
+                                </a>
+                                <a href="{{ route('logout') }}"
+                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="link__logout">
+                                    <li class="dropdown__list__item">
+                                        Logout
+                                    </li>
+                                </a>    
+     
+                             <form id="logout-form" action="{{ route('logout') }}" method="POST" >
+                                 {{ csrf_field() }}
+                             </form>
                     </div>
-                    <!--<a href="{{ route('logout') }}"
-                           onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="link__rounded link__upload-s">
-                        <li class="nav__profile__items">
-                            Logout
-                        </li>
-                    </a>-->
+                    
 
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        {{ csrf_field() }}
-                    </form>
+                    <!--
+                        <a href="{{ route('logout') }}"
+                           onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="link__rounded link__upload-s">
+                            <li class="nav__profile__items">
+                                Logout
+                            </li>
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" >
+                            {{ csrf_field() }}
+                        </form>
+                    -->
                     <a class="link__rounded link__upload-s" href="#">
-                        <img src="{{ URL::asset('/img/icon-upload.png') }}" alt="upload icon" class="link__icon">
+                        <!--<img src="{{ URL::asset('/img/icon-upload.png') }}" alt="upload icon" class="link__icon">-->
                         <li class="nav__profile__items">
                             Upload
                         </li>

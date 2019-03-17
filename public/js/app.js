@@ -12750,6 +12750,12 @@ $(document).ready(function () {
     audio[0].play();
   });
 });
+$(document).ready(function () {
+  $('#dropdown').on('click', 'ul.dropdown__list', function (e) {
+    e.preventDefault();
+    document.getElementsByClsName('dropdown__list').style.display = 'block';
+  });
+});
 
 /***/ }),
 

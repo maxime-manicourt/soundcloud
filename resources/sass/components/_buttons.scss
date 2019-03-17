@@ -22,13 +22,31 @@
 .link__upload-s{
     color: white;
     background: $pink-jackx;
-    position: relative;
-    padding-left: 2em;
+    border: 2px solid $pink-jackx;
 
+    position: relative;
+    
     @include on-event{
         background: $purple-jackx;
+        border: 2px solid $purple-jackx;
         color: white
     }
+}
+
+.link__upload-s li{
+    display: flex;
+}
+
+.link__upload-s li::before{
+    background-image: url('/img/icon-upload.png');
+    background-size: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+    content: "";
+    margin-right: 0.5em;
 }
 
 .link__icon{
