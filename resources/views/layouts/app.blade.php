@@ -19,6 +19,10 @@
                 <img src="{{ URL::asset('/img/logo_jackx.png') }}" alt="logo"/>
             </a>
         </div>
+        <form id="search">
+                <input type="search" name="search" required placeholder="Recherche"/>
+                <input type="submit" value="Rechercher"/>
+        </form>
         <nav class="nav__profile">
             <ul class="nav__profile__list">
                 @guest
@@ -70,7 +74,7 @@
                             {{ csrf_field() }}
                         </form>
                     -->
-                    <a class="link__rounded link__upload-s" href="#">
+                    <a class="link__rounded link__upload-s" href="/nouvelle">
                         <!--<img src="{{ URL::asset('/img/icon-upload.png') }}" alt="upload icon" class="link__icon">-->
                         <li class="nav__profile__items">
                             Upload

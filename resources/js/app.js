@@ -29,7 +29,7 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  */
 
 const app = new Vue({
-    el: '#app'
+    el: '#main'
 });
 
 $(document).ready (function(){

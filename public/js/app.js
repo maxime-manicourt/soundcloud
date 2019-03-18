@@ -12737,7 +12737,7 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
  */
 
 var app = new Vue({
-  el: '#app'
+  el: '#main'
 });
 $(document).ready(function () {
   $('#main').on('click', 'a.track', function (e) {
