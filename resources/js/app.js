@@ -51,3 +51,4 @@ $(document).ready (function(){
         document.getElementsByClsName('dropdown__list').style.display = 'block';
     });
 });
+
