@@ -4,7 +4,7 @@
 
     <h3>Utilisateurs</h3>
     @foreach($utilisateurs as $u)
-        <a href="/utilisateur/{{$u -> id}}">{{$u -> name}}</a><br>
+        <a href="/utilisateur/{{$u -> id}}" data-pjax>{{$u -> name}}</a><br>
     @endforeach
 
     <h3>Chansons</h3>
