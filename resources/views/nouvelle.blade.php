@@ -11,5 +11,6 @@
     {{csrf_field()}}
     <input type="submit" value="Envoyer">
 </form>
+</div>
 
 @endsection

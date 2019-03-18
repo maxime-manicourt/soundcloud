@@ -1,0 +1,37 @@
+#dropdown{
+    position: relative;
+}
+
+#dropdown:hover{
+    cursor: pointer;
+}
+
+#dropdown li{
+    margin-right: 20px;
+
+        i{
+            margin-left: 0.5em;
+        }
+}
+
+
+
+.dropdown__list{
+    display: none;
+    background-color: $pink-jackx;
+    list-style: none;
+    border-radius: 10px;
+    padding: 15px 10px 15px 0;
+    color: white;
+    position: absolute;
+    text-align: right;
+    min-width: 130%;
+}
+
+.dropdown__list__shown{
+    display: block !important;
+}
+
+.dropdown__list:hover{
+    cursor: initial
+}

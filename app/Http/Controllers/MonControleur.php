@@ -12,7 +12,7 @@ class MonControleur extends Controller
 {
     public function index() {
 
-        return view("index", ['chansons' => Chanson::all()]);
+        return view("index", ['chansons' => Chanson::orderBy('id', 'desc')->take(3)->get()]);
     }
 
     public function utilisateur($id) {
