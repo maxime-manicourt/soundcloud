@@ -40,7 +40,6 @@ class MonControleur extends Controller
     }
 
     public function creer(Request $request){
-       
         if($request->hasFile('chanson') && $request->file('chanson') -> isValid()){
             $c = new Chanson();
             $c -> nom = $request->input('nom');
