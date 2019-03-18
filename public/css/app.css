@@ -522,6 +522,7 @@ h3 {
   background: white;
   width: 100%;
   min-height: 50vh;
+  padding-top: 25px;
 }
 
 .main__nav {
@@ -700,5 +701,13 @@ h3 {
 
 .dropdown__list:hover {
   cursor: initial;
+}
+
+.title__header {
+  width: 100%;
+  text-align: left;
+  box-shadow: 10px 10px 8px rgba(69, 35, 147, 0.25);
+  margin: 25px 0;
+  padding: 15px 5px;
 }
 
