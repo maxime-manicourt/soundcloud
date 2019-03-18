@@ -6,9 +6,9 @@
     @auth
         @if($utilisateur->id != \Illuminate\Support\Facades\Auth::id())
             @if(Auth::user()->jeLesSuis->contains($utilisateur->id))
-                <a href="/suivi/{{ $utilisateur->id }}">Arrêter de suivre</a>
+                <a href="/suivi/{{ $utilisateur->id }}" data-pjax-toggle>Arrêter de suivre</a>
             @else 
-                <a href="/suivi/{{ $utilisateur->id }}">Suivre</a>
+                <a href="/suivi/{{ $utilisateur->id }}" data-pjax-toggle>Suivre</a>
             @endif
         @endif
     @endauth

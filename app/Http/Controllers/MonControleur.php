@@ -11,7 +11,7 @@ class MonControleur extends Controller
 {
     public function index() {
 
-        return view("index", ['chansons' => Chanson::all()]);
+        return view("index", ['chansons' => Chanson::orderBy('id', 'desc')->take(3)->get()]);
     }
 
     public function utilisateur($id) {
@@ -40,7 +40,6 @@ class MonControleur extends Controller
     }
 
     public function creer(Request $request){
-       
         if($request->hasFile('chanson') && $request->file('chanson') -> isValid()){
             $c = new Chanson();
             $c -> nom = $request->input('nom');
