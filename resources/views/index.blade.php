@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="banner">
+    
+</div>
+<div class="container">
 <div id="main">
     <div class="last-tracks">
         <h2>Les derniers titres</h2>
@@ -12,5 +16,6 @@
         </li>
         @endforeach
     </ul>
+</div>
 </div>
 @endsection

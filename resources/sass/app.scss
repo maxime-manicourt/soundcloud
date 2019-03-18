@@ -1,20 +1,18 @@
+// Mixins
+@import 'abstracts/mixins';
 
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
-@import url('https://fonts.googleapis.com/css?family=Kanit:400,500,900|Open+Sans" rel="stylesheet');
 
 // Variables
-@import 'variables';
+@import 'abstracts/variables';
 
 // Bootstrap
 //@import '~bootstrap/scss/bootstrap';
 
-h1, h2, h3 {
-  font-family: 'Kanit';
-  text-transform: uppercase;
-}
+@import 'base/normalize';
+@import 'base/typography';
+@import 'base/base';
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-}
+// Components
+@import 'components/header.scss';
+@import 'components/buttons';
+@import 'components/menu-dropdown';

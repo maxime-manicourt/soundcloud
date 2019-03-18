@@ -1,0 +1,63 @@
+// Fonts
+@import url(https://fonts.googleapis.com/css?family=Kanit:400,500,900|Open+Sans);
+
+@mixin on-event($self: false) {
+    @if $self {
+        &,
+        &:hover,
+        &:active,
+        &:focus {
+            @content;
+        }
+    } @else {
+        &:hover,
+        &:active,
+        &:focus {
+            @content;
+        }
+    }
+}
+
+// MIXIN BREAKPOINTS
+@mixin xs() {
+    @media screen and (max-width:$xs){
+      @content;
+    }
+  }
+  @mixin sm() {
+    @media screen and (max-width:$sm){
+      @content;
+    }
+  }
+  @mixin md() {
+    @media screen and (max-width:$md){
+      @content;
+    }
+  }
+  @mixin lg() {
+    @media screen and (max-width:$lg){
+      @content;
+    }
+  }
+
+
+  @mixin xsmin() {
+    @media screen and (min-width:$xs+1){
+      @content;
+    }
+  }
+  @mixin smmin() {
+    @media screen and (min-width:$sm+1){
+      @content;
+    }
+  }
+  @mixin mdmin() {
+    @media screen and (min-width:$md+1){
+      @content;
+    }
+  }
+  @mixin lgmin() {
+    @media screen and (min-width:$lg+1){
+      @content;
+    }
+}
