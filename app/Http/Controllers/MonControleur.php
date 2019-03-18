@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Chanson;
 use App\User;
+use Validator;
 
 class MonControleur extends Controller
 {
@@ -28,11 +29,11 @@ class MonControleur extends Controller
         $utilisateur = User::find($id);
 
         if($utilisateur==false){
-            abort('403');
+            return redirect('/')-> with('toastr', ['statut' => 'error', 'message' => 'Erreur']);
         }
     
         Auth::user()->jeLesSuis()->toggle($id);
-        return back();
+        return back()->with('toastr', ['statut' => 'success', 'message' => 'Suivi modifié']);
     }
 
     public function nouvelle(){
@@ -40,6 +41,17 @@ class MonControleur extends Controller
     }
 
     public function creer(Request $request){
+
+         $validator = Validator::make($request->all(),[
+             'nom' => 'required|min:6'
+         ]);
+
+         if ($validator -> fails()){
+             return redirect('/nouvelle')
+                ->withErrors($validator)
+                ->withInput()
+                ->with('toastr', ['statut' => 'error', 'message' => 'Erreur']);
+         }
        
         if($request->hasFile('chanson') && $request->file('chanson') -> isValid()){
             $c = new Chanson();
@@ -48,13 +60,13 @@ class MonControleur extends Controller
             $c -> utilisateur_id = Auth::id();
 
             $c -> fichier = $request -> file('chanson') -> store("/public/chansons/".Auth::id());
-            $c -> fichier = str_replace("/public/", "/storage/", $c -> fichier);
+            $c -> fichier = str_replace("public/", "/storage/", $c -> fichier);
 
             $c -> save();
 
         }
 
-        return redirect("/");
+        return redirect("/")->with('toastr', ['statut' => 'success', 'message' => 'Chanson upload !']);
     }
 
     public function recherche($s){
