@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+<pre>
+    {{print_r(Session::all())}}
+</pre>
     {{$utilisateur->name}}
     <br/>
     @auth

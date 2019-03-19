@@ -9,6 +9,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/toastr.css') }}" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -88,12 +89,15 @@
 <div id="pjax-container">
     @yield('content')
 </div>
+
 <div class="player">
     <audio id="audio" controls></audio>
 </div>
+
 <!-- Scripts -->
 <script src="{{ asset('js/jquery.js') }}"></script>
 <script src="{{ asset('js/jquery.pjax.js') }}"></script>
+<script src="{{ asset('js/toastr.min.js') }}"></script>
 <script src="{{ asset('js/app.js') }}"></script>
 
 </body>
